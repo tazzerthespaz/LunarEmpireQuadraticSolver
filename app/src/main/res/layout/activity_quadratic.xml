@@ -25,6 +25,7 @@
             />
 
         <EditText
+            android:id="@+id/editA"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -48,6 +49,7 @@
             />
 
         <EditText
+            android:id="@+id/editB"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -71,6 +73,7 @@
             />
 
         <EditText
+            android:id="@+id/editC"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -105,6 +108,13 @@
         android:layout_centerHorizontal="true"
         android:textSize="14sp"
         android:scrollbars="none" />
+    <!-- Clear Button -->
+    <Button
+        android:id="@+id/clearBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:onClick="onClickClear"/>
 
     <!-- Do the Ad -->
 </LinearLayout>

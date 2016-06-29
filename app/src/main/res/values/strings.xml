@@ -4,5 +4,6 @@
     <string name="bLabel">Input B: </string>
     <string name="cLabel">Input C: </string>
     <string name="previewText">Ax^2 + Bx + C</string>
-    <string name="calculate">Calculate!</string>
+    <string name="calculate">Calculate</string>
+    <string name="clear">Clear</string>
 </resources>

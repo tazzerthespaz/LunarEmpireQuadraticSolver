@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Quadratic App</string>
+    <string name="aLabel">Input A: </string>
+    <string name="bLabel">Input B: </string>
+    <string name="cLabel">Input C: </string>
+    <string name="previewText">Ax^2 + Bx + C</string>
+    <string name="calculate">Calculate!</string>
+</resources>

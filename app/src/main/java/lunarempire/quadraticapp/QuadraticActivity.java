@@ -56,4 +56,8 @@ public class QuadraticActivity extends AppCompatActivity {
         b.setText("");
         c.setText("");
     }
+
+    public void onClickCalculate(View view) {
+        //Do shit like get a,b,c get the roots and follow with updating the answers
+    }
 }

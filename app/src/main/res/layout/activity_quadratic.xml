@@ -11,6 +11,16 @@
     tools:context="lunarempire.quadraticapp.QuadraticActivity"
     android:orientation="vertical">
 
+    <!-- Do the Preview TODO: Change Background Color-->
+    <WebView
+        android:id="@+id/previewFormulaPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:scrollbars="none" />
+
+
     <!--This is the linear layout for A-->
     <LinearLayout
         android:id="@+id/linLayA"
@@ -81,15 +91,6 @@
             android:layout_marginLeft="10dp"
             />
     </LinearLayout>
-
-    <!-- Do the Preview TODO: Change Background Color-->
-     <WebView
-        android:id="@+id/previewFormulaPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:scrollbars="none" />
 
     <!-- Do the Button -->
 

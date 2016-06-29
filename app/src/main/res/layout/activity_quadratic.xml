@@ -79,12 +79,15 @@
             />
     </LinearLayout>
 
-    <!-- Do the Preview TODO: Change this to a webview type deal, Add top paddign-->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Do the Preview TODO: Change Background Color-->
+     <WebView
+        android:id="@+id/previewFormulaPage"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/previewText"
-        android:layout_gravity="center"/>
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:scrollbars="none" />
+
     <!-- Do the Button -->
 
     <!--Make sure you bind this to a function TODO: Add top padding-->
@@ -93,6 +96,15 @@
         android:layout_height="wrap_content"
         android:text="@string/calculate"
         android:layout_gravity="center"/>
-    <!-- Do the Webview -->
+
+    <!-- Do the Roots TODO: Change Background Color-->
+     <WebView
+        android:id="@+id/rootsFormulaPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+        android:scrollbars="none" />
+
     <!-- Do the Ad -->
 </LinearLayout>

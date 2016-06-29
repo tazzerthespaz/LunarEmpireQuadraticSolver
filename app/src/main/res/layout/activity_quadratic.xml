@@ -93,13 +93,6 @@
 
     <!-- Do the Button -->
 
-    <!--Make sure you bind this to a function TODO: Add top padding-->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculate"
-        android:layout_gravity="center"/>
-
     <!-- Do the Roots TODO: Change Background Color-->
      <WebView
         android:id="@+id/rootsFormulaPage"
@@ -108,13 +101,30 @@
         android:layout_centerHorizontal="true"
         android:textSize="14sp"
         android:scrollbars="none" />
-    <!-- Clear Button -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+    <!-- Clear Button TODO: MAKE THIS ALSO RESET THE ANSWERS -->
     <Button
         android:id="@+id/clearBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear"
+        android:layout_gravity="center"
         android:onClick="onClickClear"/>
+
+    <!--Make sure you bind this to a function TODO: Add top padding-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        android:layout_gravity="center"/>
+
+    </LinearLayout>
 
     <!-- Do the Ad -->
 </LinearLayout>

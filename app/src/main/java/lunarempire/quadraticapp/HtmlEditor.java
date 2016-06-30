@@ -1,14 +1,5 @@
 package lunarempire.quadraticapp;
 
-import android.content.Context;
-import android.content.res.AssetManager;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 import lunarEmpire.math.Quadratic;
 
 /**

@@ -9,8 +9,14 @@
 
     <script src="mathscribe/jquery-1.4.3.min.js"></script>
     <script src="mathscribe/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
-    <!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+     <!-- <script>M.MathPlayer = false; M.trustHtml = true;</script> -->
+    <script>
+        function  changeEquation(text) {
+            document.getElementById('write').innerHTML = text;
+            jqMath.parseMath(document.body);
+        }
+    </script>
 </head>
 <body>
-<p>$$x={-b±√{b^2-4ac}}/{2a}$$</p>
+<p id="write">$$x={-b±√{b^2-4ac}}/{2a}$$</p>
 </body>

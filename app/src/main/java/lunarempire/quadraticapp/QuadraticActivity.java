@@ -1,5 +1,7 @@
+//TODO: Need to sanitize input, watch out for empy editText's, a = 0
 package lunarempire.quadraticapp;
 
+import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,7 +9,11 @@ import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+
+import lunarEmpire.math.Quadratic;
 
 public class QuadraticActivity extends AppCompatActivity {
     private WebView previewContent;
@@ -15,6 +21,7 @@ public class QuadraticActivity extends AppCompatActivity {
     private EditText a;
     private EditText b;
     private EditText c;
+    private HtmlEditor htmlEditor;
 
 
     @Override
@@ -49,15 +56,30 @@ public class QuadraticActivity extends AppCompatActivity {
         this.b = (EditText) findViewById(R.id.editB);
         this.c = (EditText) findViewById(R.id.editC);
 
+        htmlEditor = new HtmlEditor(null);
+
     }
 
     public void onClickClear(View view) {
         a.setText("");
         b.setText("");
         c.setText("");
+
     }
 
     public void onClickCalculate(View view) {
         //Do shit like get a,b,c get the roots and follow with updating the answers
+        Quadratic quad = new Quadratic(Double.parseDouble(a.getText().toString()),
+                Double.parseDouble(b.getText().toString()),
+                Double.parseDouble(c.getText().toString()));
+        quad.calcRoots();
+        htmlEditor.setQuad(quad);
+        String equationString = htmlEditor.formatAnswer();
+
+        try {
+            answerContent.loadUrl("javascript:changeEquation('" + equationString + " ')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -64,6 +64,11 @@ public class QuadraticActivity extends AppCompatActivity {
         a.setText("");
         b.setText("");
         c.setText("");
+        try {
+            answerContent.loadUrl("javascript:changeEquation('$$x={-b±√{b^2-4ac}}/{2a}$$')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 

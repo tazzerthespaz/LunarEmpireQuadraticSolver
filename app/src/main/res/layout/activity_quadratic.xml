@@ -11,7 +11,6 @@
     tools:context="lunarempire.quadraticapp.QuadraticActivity"
     android:orientation="vertical">
 
-    <!-- Do the Preview TODO: Change Background Color-->
     <WebView
         android:id="@+id/previewFormulaPage"
         android:layout_width="match_parent"
@@ -34,6 +33,8 @@
             android:text="@string/aLabel"
             />
 
+        <!-- TODO: Change to allow negatives, once library is sorted out,-->
+        <!-- we can hopefully allow decimals.-->
         <EditText
             android:id="@+id/editA"
             android:layout_width="0dp"
@@ -92,9 +93,7 @@
             />
     </LinearLayout>
 
-    <!-- Do the Button -->
-
-    <!-- Do the Roots TODO: Change Background Color-->
+    <!-- Do the Roots-->
      <WebView
         android:id="@+id/rootsFormulaPage"
         android:layout_width="match_parent"
@@ -118,7 +117,6 @@
         android:layout_gravity="center"
         android:onClick="onClickClear"/>
 
-    <!--Make sure you bind this to a function TODO: Add top padding-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,5 +126,6 @@
 
     </LinearLayout>
 
-    <!-- Do the Ad -->
+    <!-- TODO: Add the decimal output -->
+    <!-- TODO: Do the Ad -->
 </LinearLayout>

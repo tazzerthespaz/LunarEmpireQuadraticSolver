@@ -1,4 +1,5 @@
 //TODO: Need to sanitize input, watch out for empy editText's, a = 0
+//TODO: Make sure that you check for too large of numbers
 package lunarempire.quadraticapp;
 
 import android.content.res.AssetManager;
@@ -80,7 +81,6 @@ public class QuadraticActivity extends AppCompatActivity {
         quad.calcRoots();
         htmlEditor.setQuad(quad);
         String equationString = htmlEditor.formatAnswer();
-
         try {
             answerContent.loadUrl("javascript:changeEquation('" + equationString + " ')");
         } catch (Exception e) {

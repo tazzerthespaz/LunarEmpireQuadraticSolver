@@ -126,6 +126,15 @@
 
     </LinearLayout>
 
-    <!-- TODO: Add the decimal output -->
+    <!-- Decimal output -->
+    <TextView
+        android:id="@+id/decimalTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="18sp"
+        android:layout_marginTop="7dp"
+        android:text="@string/defaultDecimal"/>
+
     <!-- TODO: Do the Ad -->
 </LinearLayout>

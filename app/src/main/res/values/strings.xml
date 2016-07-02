@@ -6,4 +6,5 @@
     <string name="previewText">Ax^2 + Bx + C</string>
     <string name="calculate">Calculate</string>
     <string name="clear">Clear</string>
+    <string name="defaultDecimal">0 , 0</string>
 </resources>

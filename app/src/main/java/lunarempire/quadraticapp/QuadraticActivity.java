@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import lunarEmpire.math.Quadratic;
 
@@ -18,6 +21,7 @@ public class QuadraticActivity extends AppCompatActivity {
     private EditText b;
     private EditText c;
     private HtmlEditor htmlEditor;
+    private TextView decimalAnswer;
 
 
     @Override
@@ -54,6 +58,10 @@ public class QuadraticActivity extends AppCompatActivity {
 
         htmlEditor = new HtmlEditor(null);
 
+
+        //Decimal answer
+        this.decimalAnswer = (TextView) findViewById(R.id.decimalTextView);
+
     }
 
     public void onClickClear(View view) {
@@ -65,6 +73,7 @@ public class QuadraticActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        decimalAnswer.setText(R.string.defaultDecimal);
 
     }
 
@@ -73,13 +82,24 @@ public class QuadraticActivity extends AppCompatActivity {
         Quadratic quad = new Quadratic(Double.parseDouble(a.getText().toString()),
                 Double.parseDouble(b.getText().toString()),
                 Double.parseDouble(c.getText().toString()));
-        quad.calcRoots();
         htmlEditor.setQuad(quad);
         String equationString = htmlEditor.formatAnswer();
+
+        //Update the roots answers
         try {
             answerContent.loadUrl("javascript:changeEquation('" + equationString + " ')");
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        /*
+        Update the decimal answers TODO: Add a cleanser to this output.
+        This cleanser should modify output to include imaginaries, as well as put
+        numbers on different lines if need be, as well as truncate the decimal points to 4
+        or 5 places.
+        */
+
+        decimalAnswer.setText(quad.getRoots().getNegativeDecimal() + " , "  +
+        quad.getRoots().getPositiveDecimal());
     }
 }

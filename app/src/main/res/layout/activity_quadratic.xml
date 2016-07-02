@@ -33,8 +33,7 @@
             android:text="@string/aLabel"
             />
 
-        <!-- TODO: Change to allow negatives, once library is sorted out,-->
-        <!-- we can hopefully allow decimals.-->
+        <!-- NOTE: we can hopefully allow decimals in the future, but for now, just leave with integers-->
         <EditText
             android:id="@+id/editA"
             android:layout_width="0dp"
@@ -102,39 +101,44 @@
         android:textSize="14sp"
         android:scrollbars="none" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-
-    <!-- Clear Button -->
-    <Button
-        android:id="@+id/clearBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/clear"
-        android:layout_gravity="center"
-        android:onClick="onClickClear"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculate"
-        android:layout_gravity="center"
-        android:onClick="onClickCalculate"/>
-
-    </LinearLayout>
-
-    <!-- Decimal output -->
+    <!-- Decimal Output -->
+    <!-- TODO: Consider making this bold so it Matches the other answers -->
     <TextView
         android:id="@+id/decimalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:gravity="center_horizontal"
         android:textSize="18sp"
-        android:layout_marginTop="7dp"
         android:text="@string/defaultDecimal"/>
+
+    <!-- The linear layout for the clear and calculate buttons -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp">
+
+        <!-- Clear Button -->
+        <!-- TODO: Consider making clear button same dimensions as calculate button -->
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            android:layout_gravity="center"
+            android:onClick="onClickClear"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            android:layout_gravity="center"
+            android:onClick="onClickCalculate"/>
+
+    </LinearLayout>
+
 
     <!-- TODO: Do the Ad -->
 </LinearLayout>

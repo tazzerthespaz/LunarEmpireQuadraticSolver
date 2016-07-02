@@ -2,17 +2,12 @@
 //TODO: Make sure that you check for too large of numbers
 package lunarempire.quadraticapp;
 
-import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.EditText;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 import lunarEmpire.math.Quadratic;
 

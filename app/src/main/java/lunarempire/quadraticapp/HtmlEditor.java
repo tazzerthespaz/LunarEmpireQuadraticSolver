@@ -24,11 +24,11 @@ import lunarEmpire.math.Quadratic;
 
     //Takes the Quadratic class, and writes the mathematic expression for the website
     public String formatAnswer() {
-        String equationString = "$$" + quad.getRoots().getSimpOffset().getNumerator() +
-                "/" + quad.getRoots().getSimpOffset().getDenominator() +
-                "±" + quad.getRoots().getSimpOutNum().getNumerator() + "/" +
-                quad.getRoots().getSimpOutNum().getDenominator()+ "√{" +
-                quad.getRoots().getRadical().getSimpInNum() + "$$";
+        String equationString = "$${" + quad.getRoots().getSimpOffset().getNumerator() +
+                "}/{" + quad.getRoots().getSimpOffset().getDenominator() +
+                "}±{" + quad.getRoots().getSimpOutNum().getNumerator() + "}/{" +
+                quad.getRoots().getSimpOutNum().getDenominator()+ "}√{" +
+                quad.getRoots().getRadical().getSimpInNum() + "}$$";
         String htmlLine = equationString;
         return htmlLine;
 

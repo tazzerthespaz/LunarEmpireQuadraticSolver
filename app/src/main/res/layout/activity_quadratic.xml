@@ -40,7 +40,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_marginLeft="10dp"
             />
     </LinearLayout>
@@ -64,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_marginLeft="10dp"
             />
     </LinearLayout>
@@ -88,7 +88,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:inputType="numberDecimal"
+            android:inputType="numberSigned"
             android:layout_marginLeft="10dp"
             />
     </LinearLayout>
@@ -108,7 +108,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center">
 
-    <!-- Clear Button TODO: MAKE THIS ALSO RESET THE ANSWERS -->
+    <!-- Clear Button -->
     <Button
         android:id="@+id/clearBtn"
         android:layout_width="wrap_content"

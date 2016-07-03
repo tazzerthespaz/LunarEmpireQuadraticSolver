@@ -3,6 +3,7 @@
 package lunarempire.quadraticapp;
 
 import android.graphics.Color;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import lunarEmpire.math.AIsZeroException;
 import lunarEmpire.math.Quadratic;
 
 public class QuadraticActivity extends AppCompatActivity {
@@ -22,7 +24,8 @@ public class QuadraticActivity extends AppCompatActivity {
     private EditText c;
     private HtmlEditor htmlEditor;
     private TextView decimalAnswer;
-
+    private DialogFragment aIsZeroDialog;
+    private DialogFragment emptyFieldDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,11 @@ public class QuadraticActivity extends AppCompatActivity {
         //Decimal answer
         this.decimalAnswer = (TextView) findViewById(R.id.decimalTextView);
 
+
+        //Setup the dialogs
+        this.aIsZeroDialog = new AIsZeroDialogFragment();
+        this.emptyFieldDialog = new EmptyFieldDialogFragment();
+
     }
 
     public void onClickClear(View view) {
@@ -79,27 +87,48 @@ public class QuadraticActivity extends AppCompatActivity {
 
     public void onClickCalculate(View view) {
         //Do shit like get a,b,c get the roots and follow with updating the answers
-        Quadratic quad = new Quadratic(Double.parseDouble(a.getText().toString()),
-                Double.parseDouble(b.getText().toString()),
-                Double.parseDouble(c.getText().toString()));
-        htmlEditor.setQuad(quad);
-        String equationString = htmlEditor.formatAnswer();
-
-        //Update the roots answers
         try {
-            answerContent.loadUrl("javascript:changeEquation('" + equationString + " ')");
+            double aNum = Double.parseDouble(a.getText().toString());
+            double bNum = Double.parseDouble(b.getText().toString());
+            double cNum = Double.parseDouble(c.getText().toString());
+
+            try {
+                Quadratic quad = new Quadratic(aNum, bNum, cNum);
+                htmlEditor.setQuad(quad);
+                String equationString = htmlEditor.formatAnswer();
+
+                //Update the roots answers
+                try {
+                    answerContent.loadUrl("javascript:changeEquation('" + equationString + " ')");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                /*
+                Update the decimal answers TODO: Add a cleanser to this output.
+                This cleanser should modify output to include imaginaries, as well as put
+                numbers on different lines if need be, as well as truncate the decimal points to 4
+                or 5 places.
+                */
+
+                decimalAnswer.setText(quad.getRoots().getNegativeDecimal() + " , "  +
+                        quad.getRoots().getPositiveDecimal());
+
+            }catch (AIsZeroException e) {
+                aIsZeroDialog.show(getSupportFragmentManager(), "IDK what this message is");
+            }
+
         } catch (Exception e) {
-            e.printStackTrace();
+            emptyFieldDialog.show(getSupportFragmentManager(), "still idk");
         }
 
-        /*
-        Update the decimal answers TODO: Add a cleanser to this output.
-        This cleanser should modify output to include imaginaries, as well as put
-        numbers on different lines if need be, as well as truncate the decimal points to 4
-        or 5 places.
-        */
 
-        decimalAnswer.setText(quad.getRoots().getNegativeDecimal() + " , "  +
-        quad.getRoots().getPositiveDecimal());
+        //TODO: Fix up the library, always gets hung up on shit
+        //TODO: Library crashes on get decimal when imaginary
+        //Library should have a decimal ouput class where it then can format it to a string itsself
+
     }
+
+    //TODO: Add toast notifications for when a = 0 and stuff
+    //private boolean inputCleanse()
 }

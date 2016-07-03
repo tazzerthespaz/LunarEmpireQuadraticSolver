@@ -26,8 +26,11 @@ import lunarEmpire.math.Quadratic;
         String equationString = "$${" + quad.getRoots().getSimpOffset().getNumerator() +
                 "}/{" + quad.getRoots().getSimpOffset().getDenominator() +
                 "}±{" + quad.getRoots().getSimpOutNum().getNumerator() + "}/{" +
-                quad.getRoots().getSimpOutNum().getDenominator()+ "}√{" +
-                quad.getRoots().getRadical().getSimpInNum() + "}$$";
+                quad.getRoots().getSimpOutNum().getDenominator()+ "}";
+        if(quad.getRoots().getImaginary()) {
+            equationString += "i";
+        }
+        equationString += "√{" + quad.getRoots().getRadical().getSimpInNum() + "}$$";
         String htmlLine = equationString;
         return htmlLine;
 

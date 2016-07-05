@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 
 import lunarEmpire.math.AIsZeroException;
 import lunarEmpire.math.Quadratic;
+import lunarEmpire.math.DecimalRootDisplay;
 
 public class QuadraticActivity extends AppCompatActivity {
     private WebView previewContent;
@@ -102,15 +103,12 @@ public class QuadraticActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                /*
-                Update the decimal answers TODO: Add a cleanser to this output.
-                This cleanser should modify output to include imaginaries, as well as put
-                numbers on different lines if need be, as well as truncate the decimal points to 4
-                or 5 places.
-                */
+                //TODO: Some day, make it possible to set the length of how many decimal places.
+                DecimalRootDisplay drdPos = new DecimalRootDisplay(quad.getRoots().getPositiveDecimal());
+                DecimalRootDisplay drdNeg = new DecimalRootDisplay(quad.getRoots().getNegativeDecimal());
 
-                decimalAnswer.setText(quad.getRoots().getNegativeDecimal() + " , "  +
-                        quad.getRoots().getPositiveDecimal());
+                decimalAnswer.setText(drdPos.getRounded(5) + " , "  +
+                        drdNeg.getRounded(5));
 
             }catch (AIsZeroException e) {
                 aIsZeroDialog.show(getSupportFragmentManager(), "IDK what this message is");

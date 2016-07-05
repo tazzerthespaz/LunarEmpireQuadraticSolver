@@ -1,5 +1,3 @@
-//TODO: Need to sanitize input, watch out for empy editText's, a = 0
-//TODO: Make sure that you check for too large of numbers
 package lunarempire.quadraticapp;
 
 import android.graphics.Color;
@@ -121,14 +119,5 @@ public class QuadraticActivity extends AppCompatActivity {
         } catch (Exception e) {
             emptyFieldDialog.show(getSupportFragmentManager(), "still idk");
         }
-
-
-        //TODO: Fix up the library, always gets hung up on shit
-        //TODO: Library crashes on get decimal when imaginary
-        //Library should have a decimal ouput class where it then can format it to a string itsself
-
     }
-
-    //TODO: Add toast notifications for when a = 0 and stuff
-    //private boolean inputCleanse()
 }

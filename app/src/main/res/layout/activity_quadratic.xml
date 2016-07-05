@@ -110,6 +110,7 @@
         android:layout_gravity="center"
         android:gravity="center_horizontal"
         android:textSize="18sp"
+        android:textColor="@color/rootTextViewFont"
         android:text="@string/defaultDecimal"/>
 
     <!-- The linear layout for the clear and calculate buttons -->

@@ -22,7 +22,6 @@ import lunarEmpire.math.Quadratic;
 
     //Takes the Quadratic class, and writes the mathematic expression for the website
     public String formatAnswer() {
-        //TODO: Make it so that you add an "i" if needed
         String equationString = "$${" + quad.getRoots().getSimpOffset().getNumerator() +
                 "}/{" + quad.getRoots().getSimpOffset().getDenominator() +
                 "}±{" + quad.getRoots().getSimpOutNum().getNumerator() + "}/{" +

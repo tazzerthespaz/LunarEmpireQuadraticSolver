@@ -102,7 +102,6 @@
         android:scrollbars="none" />
 
     <!-- Decimal Output -->
-    <!-- TODO: Consider making this bold so it Matches the other answers -->
     <TextView
         android:id="@+id/decimalTextView"
         android:layout_width="wrap_content"

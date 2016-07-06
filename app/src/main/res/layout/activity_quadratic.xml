@@ -5,154 +5,170 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.lunarempire.quadraticapp.QuadraticActivity"
     android:orientation="vertical">
 
-    <WebView
-        android:id="@+id/previewFormulaPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:scrollbars="none" />
-
-
-    <!--This is the linear layout for A-->
     <LinearLayout
-        android:id="@+id/linLayA"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_height="wrap_content">
 
+        <WebView
+            android:id="@+id/previewFormulaPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:scrollbars="none" />
+
+
+        <!--This is the linear layout for A-->
+        <LinearLayout
+            android:id="@+id/linLayA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aLabel"
+                />
+
+            <!-- NOTE: we can hopefully allow decimals in the future, but for now, just leave with integers-->
+            <EditText
+                android:id="@+id/editA"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+        <!--This is the linear layout for B-->
+        <LinearLayout
+            android:id="@+id/linLayB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bLabel"
+                />
+
+            <EditText
+                android:id="@+id/editB"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+        <!--This is the linear layout for C-->
+        <LinearLayout
+            android:id="@+id/linLayC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cLabel"
+                />
+
+            <EditText
+                android:id="@+id/editC"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberSigned"
+                android:layout_marginLeft="10dp"
+                />
+        </LinearLayout>
+
+        <!-- Do the Roots-->
+        <WebView
+            android:id="@+id/rootsFormulaPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp"
+            android:scrollbars="none" />
+
+        <!-- Decimal Output -->
         <TextView
+            android:id="@+id/decimalTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/aLabel"
-            />
-
-        <!-- NOTE: we can hopefully allow decimals in the future, but for now, just leave with integers-->
-        <EditText
-            android:id="@+id/editA"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="numberSigned"
-            android:layout_marginLeft="10dp"
-            />
-    </LinearLayout>
-
-    <!--This is the linear layout for B-->
-    <LinearLayout
-        android:id="@+id/linLayB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="2dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bLabel"
-            />
-
-        <EditText
-            android:id="@+id/editB"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="numberSigned"
-            android:layout_marginLeft="10dp"
-            />
-    </LinearLayout>
-
-    <!--This is the linear layout for C-->
-    <LinearLayout
-        android:id="@+id/linLayC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="2dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cLabel"
-            />
-
-        <EditText
-            android:id="@+id/editC"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="numberSigned"
-            android:layout_marginLeft="10dp"
-            />
-    </LinearLayout>
-
-    <!-- Do the Roots-->
-     <WebView
-        android:id="@+id/rootsFormulaPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:textSize="14sp"
-        android:scrollbars="none" />
-
-    <!-- Decimal Output -->
-    <TextView
-        android:id="@+id/decimalTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center_horizontal"
-        android:textSize="18sp"
-        android:textColor="@color/rootTextViewFont"
-        android:text="@string/defaultDecimal"/>
-
-    <!-- The linear layout for the clear and calculate buttons -->
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        android:layout_marginTop="7dp">
-
-        <!-- Clear Button -->
-        <!-- TODO: Consider making clear button same dimensions as calculate button -->
-        <Button
-            android:id="@+id/clearBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear"
             android:layout_gravity="center"
-            android:onClick="onClickClear"/>
+            android:gravity="center_horizontal"
+            android:textSize="18sp"
+            android:textColor="@color/rootTextViewFont"
+            android:text="@string/defaultDecimal"/>
 
-        <Button
+        <!-- The linear layout for the clear and calculate buttons -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/calculate"
+            android:orientation="horizontal"
             android:layout_gravity="center"
-            android:onClick="onClickCalculate"/>
+            android:layout_marginTop="7dp">
+
+            <!-- Clear Button -->
+            <!-- TODO: Consider making clear button same dimensions as calculate button -->
+            <Button
+                android:id="@+id/clearBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:layout_gravity="center"
+                android:onClick="onClickClear"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/calculate"
+                android:layout_gravity="center"
+                android:onClick="onClickCalculate"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-
-    <!-- TODO: Do the Ad -->
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:gravity="bottom"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="bottom"
-        android:layout_weight="1"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/secret_admob_ad_unit_id">
-    </com.google.android.gms.ads.AdView>
+        android:gravity="bottom">
+
+        <!-- TODO: Do the Ad -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/secret_admob_ad_unit_id">
+        </com.google.android.gms.ads.AdView>
+
+    </LinearLayout>
+
+    <!-- TODO: test ad on every device, dev artwork, find
+    out how to export the realease version, or how to switch flavors, package,
+    upload -->
 
 </LinearLayout>

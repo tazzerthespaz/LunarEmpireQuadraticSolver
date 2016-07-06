@@ -1,4 +1,4 @@
-package lunarempire.quadraticapp;
+package com.lunarempire.quadraticapp;
 
 import lunarEmpire.math.Quadratic;
 

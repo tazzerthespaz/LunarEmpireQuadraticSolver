@@ -1,4 +1,4 @@
-package lunarempire.quadraticapp;
+package com.lunarempire.quadraticapp;
 
 import android.graphics.Color;
 import android.support.v4.app.DialogFragment;
@@ -9,7 +9,9 @@ import android.webkit.WebView;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 import lunarEmpire.math.AIsZeroException;
 import lunarEmpire.math.Quadratic;
@@ -30,6 +32,12 @@ public class QuadraticActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quadratic);
+
+        //Admob
+        MobileAds.initialize(getApplicationContext(), getString(R.string.secret_admob_app_id));
+
+
+
 
         //Preview WebView
         previewContent = (WebView) findViewById(R.id.previewFormulaPage);
@@ -68,6 +76,13 @@ public class QuadraticActivity extends AppCompatActivity {
         //Setup the dialogs
         this.aIsZeroDialog = new AIsZeroDialogFragment();
         this.emptyFieldDialog = new EmptyFieldDialogFragment();
+
+        //Admob
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice("TEST_EMULATOR")
+                .build();
+        mAdView.loadAd(adRequest);
 
     }
 
@@ -113,7 +128,6 @@ public class QuadraticActivity extends AppCompatActivity {
             }catch (AIsZeroException e) {
                 aIsZeroDialog.show(getSupportFragmentManager(), "IDK what this message is");
             }
-
         } catch (Exception e) {
             emptyFieldDialog.show(getSupportFragmentManager(), "still idk");
         }

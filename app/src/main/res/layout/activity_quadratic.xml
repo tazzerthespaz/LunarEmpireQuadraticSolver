@@ -127,7 +127,6 @@
             android:layout_marginTop="7dp">
 
             <!-- Clear Button -->
-            <!-- TODO: Consider making clear button same dimensions as calculate button -->
             <Button
                 android:id="@+id/clearBtn"
                 android:layout_width="wrap_content"
@@ -153,7 +152,7 @@
         android:layout_gravity="bottom"
         android:gravity="bottom">
 
-        <!-- TODO: Do the Ad -->
+        <!-- Do the Ad -->
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="wrap_content"

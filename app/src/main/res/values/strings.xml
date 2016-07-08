@@ -7,8 +7,8 @@
     <string name="calculate">Calculate</string>
     <string name="clear">Clear</string>
     <string name="defaultDecimal">0 , 0</string>
-    <string name="aIsZerodDialogeMessage">Having A equal to 0 is an invalid quadratic equation.</string>
-    <string name="blankFieldsDialogeMessage">Please do not leave any of the numbers blank.</string>
+    <string name="aIsZerodDialogeMessage">Having a = 0 is an invalid quadratic equation.</string>
+    <string name="blankFieldsDialogeMessage">Do not leave any of the numbers blank.</string>
     <string name="invalidInput">Invalid Input</string>
     <string name="ok">OK</string>
 </resources>
